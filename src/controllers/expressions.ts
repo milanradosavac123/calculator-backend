@@ -3,8 +3,12 @@ import Mexp from "math-expression-evaluator";
 
 const mexp = new Mexp();
 
-export const evaluate: RequestHandler = async (req, res, next) => {
-    const expression = req.params.expression;
+interface EvaluateExpressionBody {
+    expression: string
+}
+
+export const evaluate: RequestHandler<unknown, unknown, EvaluateExpressionBody, unknown> = async (req, res, next) => {
+    const expression = req.body.expression;
 
     const lexed = mexp.lex(expression);
     const postfixed = mexp.toPostfix(lexed);

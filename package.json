@@ -1,6 +1,7 @@
 {
   "name": "calculator-backend",
   "version": "1.0.0",
+  "proxy": "https://calculator-backend-l7jv.onrender.com",
   "description": "The backend for the simple calculator app for Multimedial Design class",
   "main": "dist/server.js",
   "scripts": {

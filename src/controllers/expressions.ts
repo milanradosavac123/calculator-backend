@@ -9,7 +9,7 @@ interface EvaluateExpressionBody {
 
 export const evaluate: RequestHandler<unknown, unknown, EvaluateExpressionBody, unknown> = async (req, res, next) => {
     const expression = req.body.expression;
-    print(expression)
+    
     const lexed = mexp.lex(expression);
     const postfixed = mexp.toPostfix(lexed);
     const result = mexp.postfixEval(postfixed);
